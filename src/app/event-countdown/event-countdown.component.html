@@ -1,0 +1,15 @@
+<mat-card *ngFor="let event of events" style="margin-bottom: 10px">
+  <mat-card-header>
+    <mat-card-title>{{event.title}}</mat-card-title>
+    <mat-card-subtitle>{{event.description}}</mat-card-subtitle>
+    <mat-card-subtitle>{{event.date | date: 'medium'}} PST</mat-card-subtitle>
+  </mat-card-header>
+  <ng-container *ngIf="event.timer | async as timer">
+    <mat-card-content>
+      <!--{{event.date | date: 'medium'}} <br> -->
+      Coming up in {{timer.days}} Days, {{timer.hours}} Hours, {{timer.minutes}} Minutes, and {{timer.seconds}} Seconds
+    </mat-card-content>
+  </ng-container>
+</mat-card>
+<br>
+<br>
