@@ -1,0 +1,11 @@
+<div *ngIf="serverStatus">
+  <p *ngIf="serverStatus.online">HatCraft is running!</p>
+  <p *ngIf="!serverStatus.online">HatCraft is not running! You should reach out to the admins.</p>
+  <p>Number of online players: {{serverStatus.players.online}}</p>
+  <mat-grid-list cols="4" rowHeight="100px">
+
+  </mat-grid-list>
+  <ul>
+    <li *ngFor="let player of serverStatus.players.list">{{player}}</li>
+  </ul>
+</div>
