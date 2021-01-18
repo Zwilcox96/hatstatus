@@ -18,11 +18,10 @@ interface Event {
 export class EventCountdownComponent implements OnInit {
 
   events: Event[] = [
-                      { title: 'Enter the End!', date: new Date('2021-01-16T18:00:00-08:00'), description: 'Dragon fight and end exploration!!!'},
                       { title: 'Build Battles', date: new Date('2021-01-19T18:00:00-08:00'), description: 'Build all the things!'}
-                    ]
+                    ];
 
-  timers: Observable<Time>[]
+  timers: Observable<Time>[];
   constructor(private timerService: TimerService) { }
 
   ngOnInit(): void {
