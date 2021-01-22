@@ -18,7 +18,7 @@ interface Event {
 export class EventCountdownComponent implements OnInit {
 
   events: Event[] = [
-                      { title: 'Build Battles', date: new Date('2021-01-19T18:00:00-08:00'), description: 'Build all the things!'}
+                      { title: 'Minecraft Cribs', date: new Date('2021-02-28T16:30:00-08:00'), description: 'Show off your survival builds!'}
                     ];
 
   timers: Observable<Time>[];
