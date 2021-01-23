@@ -5,6 +5,11 @@
   <h2 *ngIf="serverStatus.players.online == 1">There is {{serverStatus.players.online}} player online.</h2>
   <h2 *ngIf="serverStatus.players.online == 0">There are no players online.</h2>
 
+  <youtube-player *ngIf="!serverStatus.online"
+                  videoId="-kESoB4vQEM"
+                  suggestedQuality="highres"
+                  [height]="250"
+                  [width]="500" ></youtube-player>
   <mat-list>
     <mat-list-item *ngFor="let player of serverStatus.players.list">
       <img mat-list-avatar src="https://minotar.net/avatar/{{player}}/100" alt="The avatar of {{player}}"> {{player}}

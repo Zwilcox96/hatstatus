@@ -10,6 +10,7 @@ import { TimerService } from './timer.service';
 import { MatCardModule } from '@angular/material/card';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatListModule } from '@angular/material/list';
+import {YouTubePlayerModule} from '@angular/youtube-player';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { MatListModule } from '@angular/material/list';
     HttpClientModule,
     MatCardModule,
     BrowserAnimationsModule,
-    MatListModule
+    MatListModule,
+    YouTubePlayerModule
   ],
   providers: [
     ServerStatusService,
