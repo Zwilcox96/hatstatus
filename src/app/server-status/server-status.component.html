@@ -1,11 +1,13 @@
-<div *ngIf="serverStatus">
-  <p *ngIf="serverStatus.online">HatCraft is running!</p>
-  <p *ngIf="!serverStatus.online">HatCraft is not running! You should reach out to the admins.</p>
-  <p>Number of online players: {{serverStatus.players.online}}</p>
-  <mat-grid-list cols="4" rowHeight="100px">
+<div *ngIf="serverStatus" style="margin-bottom: 10%">
+  <h1 *ngIf="serverStatus.online">HatCraft is running!</h1>
+  <h1 *ngIf="!serverStatus.online">HatCraft is not running! You should reach out to the admins.</h1>
+  <h2 *ngIf="serverStatus.players.online > 1">There are {{serverStatus.players.online}} players online.</h2>
+  <h2 *ngIf="serverStatus.players.online == 1">There is {{serverStatus.players.online}} player online.</h2>
+  <h2 *ngIf="serverStatus.players.online == 0">There are no players online.</h2>
 
-  </mat-grid-list>
-  <ul>
-    <li *ngFor="let player of serverStatus.players.list">{{player}}</li>
-  </ul>
+  <mat-list>
+    <mat-list-item *ngFor="let player of serverStatus.players.list">
+      <img mat-list-avatar src="https://minotar.net/avatar/{{player}}/100" alt="The avatar of {{player}}"> {{player}}
+    </mat-list-item>
+  </mat-list>
 </div>
