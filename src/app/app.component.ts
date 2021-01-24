@@ -7,5 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'HatStatus';
-}
+  partyTime: boolean;
 
+  onPartyTime(isParty: boolean): void {
+    this.partyTime = isParty;
+  }
+}

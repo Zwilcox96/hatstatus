@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, EventEmitter, Output} from '@angular/core';
 import {ServerStatusResponse, ServerStatusService} from '../server-status.service';
 
 @Component({
@@ -10,14 +10,23 @@ import {ServerStatusResponse, ServerStatusService} from '../server-status.servic
 export class ServerStatusComponent implements OnInit {
 
   serverStatus: ServerStatusResponse;
+  partyMinimum = 5;
+  @Output() isParty = new EventEmitter<boolean>();
 
-  constructor(private serverStatusService: ServerStatusService) {
+  constructor(private serverStatusService: ServerStatusService) { }
+
+  ngOnInit(): void {
     this.getServerStatus();
   }
 
-  ngOnInit(): void { }
-
   getServerStatus(): void {
-    this.serverStatusService.getServerStatus().subscribe(serverStatus => this.serverStatus = serverStatus);
+    this.serverStatusService.getServerStatus().subscribe(serverStatus => {
+      this.serverStatus = serverStatus;
+      this.isParty.emit(this.serverStatus.players.online >= this.partyMinimum);
+      if (this.serverStatus.players.online >= this.partyMinimum){
+        document.body.className = 'mat-typography party';
+        document.getElementById('toolbar').className += ' party';
+      }
+    });
   }
 }

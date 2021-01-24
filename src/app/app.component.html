@@ -55,6 +55,19 @@
     font-weight: 600;
   }
 
+  .toolbar.party {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    background-color: #606063;
+    color: white;
+    font-weight: 600;
+  }
+
   .toolbar img {
     margin: 0 16px;
   }
@@ -308,7 +321,7 @@
 
 <!-- Toolbar -->
 <div>
-  <div class="toolbar" role="banner">
+  <div id="toolbar" class="toolbar" role="banner">
     <img
       width="40"
       alt="Angular Logo"
@@ -319,8 +332,12 @@
   </div>
 
   <div class="content" role="main">
-    <app-server-status></app-server-status>
-    <app-event-countdown></app-event-countdown>
+    <div style="display: flex; flex-grow: grow; width: 100%">
+      <app-server-status (isParty)="onPartyTime($event)"></app-server-status>
+      <div *ngIf="partyTime != null">
+        <app-event-countdown [partyTime]="partyTime"></app-event-countdown>
+      </div>
+    </div>
   </div>
 </div>
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->

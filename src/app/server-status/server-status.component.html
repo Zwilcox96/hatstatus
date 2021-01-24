@@ -1,7 +1,8 @@
-<div *ngIf="serverStatus" style="margin-bottom: 10%">
+<div *ngIf="serverStatus" style="margin-bottom: 10%; margin-right: 20%" [style.color]="serverStatus.players.online >= partyMinimum ? 'white' : 'black'">
   <h1 *ngIf="serverStatus.online">HatCraft is running!</h1>
   <h1 *ngIf="!serverStatus.online">HatCraft is not running! You should reach out to the admins.</h1>
-  <h2 *ngIf="serverStatus.players.online > 1">There are {{serverStatus.players.online}} players online.</h2>
+  <h2 *ngIf="serverStatus.players.online > 1 && serverStatus.players.online < partyMinimum">There are {{serverStatus.players.online}} players online.</h2>
+  <h2 *ngIf="serverStatus.players.online > partyMinimum">There are {{serverStatus.players.online}} players online! #party</h2>
   <h2 *ngIf="serverStatus.players.online == 1">There is {{serverStatus.players.online}} player online.</h2>
   <h2 *ngIf="serverStatus.players.online == 0">There are no players online.</h2>
 
@@ -11,7 +12,7 @@
                   [height]="250"
                   [width]="500" ></youtube-player>
   <mat-list>
-    <mat-list-item *ngFor="let player of serverStatus.players.list">
+    <mat-list-item *ngFor="let player of serverStatus.players.list" [style.color]="serverStatus.players.online >= partyMinimum ? 'white' : 'black'">
       <img mat-list-avatar src="https://minotar.net/avatar/{{player}}/100" alt="The avatar of {{player}}"> {{player}}
     </mat-list-item>
   </mat-list>

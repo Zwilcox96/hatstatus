@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit, OnChanges, SimpleChanges} from '@angular/core';
 import { TimerService, Time } from '../timer.service';
 import {Observable} from 'rxjs';
 
@@ -15,7 +15,8 @@ interface Event {
   styleUrls: ['./event-countdown.component.css']
 })
 
-export class EventCountdownComponent implements OnInit {
+export class EventCountdownComponent implements OnInit{
+  @Input() partyTime: boolean;
 
   events: Event[] = [
                       { title: 'Minecraft Cribs', date: new Date('2021-02-28T16:30:00-08:00'), description: 'Show off your survival builds!'}
