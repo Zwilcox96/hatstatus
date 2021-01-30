@@ -2,6 +2,8 @@ import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
+  let toolbar: HTMLElement;
+
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [
@@ -22,10 +24,10 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('HatStatus');
   });
 
-  it('should render title', () => {
+  it('Toolbar should be visible', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
-    const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('HatStatus app is running!');
+    toolbar = fixture.nativeElement.querySelector('div.toolbar');
+    expect(toolbar.textContent).toContain('Hat Status');
   });
 });

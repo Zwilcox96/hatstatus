@@ -61,7 +61,7 @@ export class ServerStatusService {
 
   }
 
-  private handleError<T>(operation = 'operation', result?: T) {
+  private handleError<T>(operation = 'operation', result?: T): any {
     return (error: any): Observable<T> => {
 
       // TODO: send the error to remote logging infrastructure
@@ -77,8 +77,8 @@ export class ServerStatusService {
 
   getServerStatus(): Observable<ServerStatusResponse> {
     return this.http.get<ServerStatusResponse>(`https://api.mcsrvstat.us/2/${environment.serverUrl}`).pipe(
-      tap(_ => console.log(`fetched hero id=`)),
-      catchError(this.handleError<ServerStatusResponse>(`getHero id=`))
+      tap(_ => console.log(`grabbed server info`)),
+      catchError(this.handleError<ServerStatusResponse>(``))
     );
   }
 }
