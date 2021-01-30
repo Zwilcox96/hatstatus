@@ -19,8 +19,8 @@ export class EventCountdownComponent implements OnInit{
   @Input() partyTime: boolean;
 
   events: Event[] = [
-                      { title: 'Animal Farm', date: new Date('2021-01-30T18:00:00-08:00'), description: 'Old McDonald had a farm and maybe you will too!'}
-                      { title: 'Capture the Flag', date: new Date('2021-02-13T18:00:00-08:00'), description: 'Red VS Blue! Who will win???'}
+                      { title: 'Animal Farm', date: new Date('2021-01-30T18:00:00-08:00'), description: 'Old McDonald had a farm and maybe you will too!'},
+                      { title: 'Capture the Flag', date: new Date('2021-02-13T18:00:00-08:00'), description: 'Red VS Blue! Who will win???'},
                       { title: 'Minecraft Cribs', date: new Date('2021-02-28T16:30:00-08:00'), description: 'Show off your survival builds!'}
                     ];
 
