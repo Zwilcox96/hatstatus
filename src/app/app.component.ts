@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'AlexStatus';
+  title = 'HatStatus';
   partyTime: boolean;
 
   onPartyTime(isParty: boolean): void {
