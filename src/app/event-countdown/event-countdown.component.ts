@@ -19,7 +19,7 @@ export class EventCountdownComponent implements OnInit{
   @Input() partyTime: boolean;
 
   events: Event[] = [
-                      { title: 'Minecraft Cribs', date: new Date('2021-02-28T16:30:00-08:00'), description: 'Show off your survival builds!'}
+                      { title: 'Pac Man', date: new Date('2021-03-28T17:30:00-07:00'), description: 'Try not to get packed into a man'}
                     ];
 
   timers: Observable<Time>[];
