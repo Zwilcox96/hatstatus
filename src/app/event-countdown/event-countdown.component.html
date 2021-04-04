@@ -8,7 +8,7 @@
   <mat-card-header>
     <mat-card-title>{{event.title}}</mat-card-title>
     <mat-card-subtitle>{{event.description}}</mat-card-subtitle>
-    <mat-card-subtitle>{{event.date | date: 'medium'}} PST</mat-card-subtitle>
+    <mat-card-subtitle>{{event.date | date: 'MMMM d, y, h:mm a z'}} </mat-card-subtitle>
   </mat-card-header>
   <ng-container *ngIf="event.timer | async as timer">
     <mat-card-content>

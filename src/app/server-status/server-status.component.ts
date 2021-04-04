@@ -22,6 +22,10 @@ export class ServerStatusComponent implements OnInit {
   getServerStatus(): void {
     this.serverStatusService.getServerStatus().subscribe(serverStatus => {
       this.serverStatus = serverStatus;
+      if (this.serverStatus.online === false){
+        this.isParty.emit(false);
+        return;
+      }
       this.isParty.emit(this.serverStatus.players.online >= this.partyMinimum);
       if (this.serverStatus.players.online >= this.partyMinimum){
         document.body.className = 'mat-typography party';
