@@ -1,4 +1,4 @@
-<div *ngIf="serverStatus" style="margin-bottom: 10%; margin-right: 20%" [style.color]="serverStatus?.players?.online >= partyMinimum ? 'white' : 'black'">
+<div [class.show]="serverStatus" style="margin-bottom: 10%; margin-right: 20%" [style.color]="serverStatus?.players?.online >= partyMinimum ? 'white' : 'black'" class="demo-youtube-player" #demoYouTubePlayer>
   <h1 *ngIf="serverStatus.online">HatCraft is running!</h1>
   <h1 *ngIf="!serverStatus.online">HatCraft is not running! You should reach out to the admins.</h1>
   <h2 *ngIf="serverStatus?.players?.online > 1 && serverStatus?.players?.online < partyMinimum">There are {{serverStatus.players.online}} players online.</h2>
@@ -6,11 +6,11 @@
   <h2 *ngIf="serverStatus?.players?.online == 1">There is {{serverStatus.players.online}} player online.</h2>
   <h2 *ngIf="serverStatus?.players?.online == 0">There are no players online.</h2>
 
-  <youtube-player *ngIf="!serverStatus.online"
+  <youtube-player [class.show]="!serverStatus.online"
                   videoId="-kESoB4vQEM"
                   suggestedQuality="highres"
-                  [height]="250"
-                  [width]="500" ></youtube-player>
+                  [height]="videoHeight"
+                  [width]="videoWidth" ></youtube-player>
   <mat-list *ngIf="serverStatus.online">
     <mat-list-item *ngFor="let player of serverStatus.players.list" [style.color]="serverStatus.players.online >= partyMinimum ? 'white' : 'black'">
       <img mat-list-avatar src="https://minotar.net/avatar/{{player}}/100" alt="The avatar of {{player}}"> {{player}}
