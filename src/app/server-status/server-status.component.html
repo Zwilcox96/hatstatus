@@ -6,7 +6,7 @@
   <h2 *ngIf="serverStatus?.players?.online == 1">There is {{serverStatus.players.online}} player online.</h2>
   <h2 *ngIf="serverStatus?.players?.online == 0">There are no players online.</h2>
 
-  <youtube-player [class.show]="!serverStatus.online"
+  <youtube-player [hidden]="serverStatus.online"
                   videoId="-kESoB4vQEM"
                   suggestedQuality="highres"
                   [height]="videoHeight"
