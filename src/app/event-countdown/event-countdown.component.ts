@@ -19,7 +19,7 @@ export class EventCountdownComponent implements OnInit{
   @Input() partyTime: boolean;
 
   events: Event[] = [
-                      { title: 'Capture the Flag', date: new Date('2021-04-09T18:00:00-07:00'), description: 'Try to grab some fabric'}
+                      { title: 'Server Reopening', date: new Date('2021-06-01T00:00:00-07:00'), description: 'Try to grab some fabric'}
                     ];
 
   timers: Observable<Time>[];

@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  serverUrl: 'hatcraft.serverminer.com'
+  serverUrl: 'pixelmon.hatstatus.com'
 };
 
 /*
