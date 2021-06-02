@@ -1,6 +1,6 @@
 <div [class.show]="serverStatus" style="margin-bottom: 10%; margin-right: 20%" [style.color]="serverStatus?.players?.online >= partyMinimum ? 'white' : 'black'" class="demo-youtube-player" #demoYouTubePlayer>
-  <h1 *ngIf="serverStatus.online">Pixelmon is running!</h1>
-  <h1 *ngIf="!serverStatus.online">Pixelmon is not running! You should reach out to the admins.</h1>
+  <h1 *ngIf="serverStatus.online">Hatcraft is running!</h1>
+  <h1 *ngIf="!serverStatus.online">Hatcraft is not running! You should reach out to the Bureau.</h1>
   <h2 *ngIf="serverStatus?.players?.online > 1 && serverStatus?.players?.online < partyMinimum">There are {{serverStatus.players.online}} players online.</h2>
   <h2 *ngIf="serverStatus?.players?.online >= partyMinimum">There are {{serverStatus.players.online}} players online! #party</h2>
   <h2 *ngIf="serverStatus?.players?.online == 1">There is {{serverStatus.players.online}} player online.</h2>
